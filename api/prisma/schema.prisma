@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Automovel {
+  id         Int      @id @default(autoincrement())
+  modelo     String
+  preco      Float
+  alocacoes  Alocacao[]
+}
+
+model Cliente {
+  id         Int      @id @default(autoincrement())
+  nome       String
+  vendas     Venda[]
+}
+
+model Concessionaria {
+  id         Int      @id @default(autoincrement())
+  concessionaria       String
+  alocacoes  Alocacao[]
+}
+
+model Alocacao {
+  id         Int      @id @default(autoincrement())
+  area  Int
+  quantidade  Int
+  automovel  Int
+  concessionaria  Int
+  possui   Automovel   @relation(fields: [automovel], references: [id])
+  contem   Concessionaria   @relation(fields: [concessionaria], references: [id])
+  vendas     Venda[]
+}
+
+model Venda {
+  id         Int      @id @default(autoincrement())
+  data  DateTime @default(now())
+  cliente  Int
+  alocacao Int
+  compra   Cliente   @relation(fields: [cliente], references: [id])
+  faz   Alocacao   @relation(fields: [alocacao], references: [id])
+}
