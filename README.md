@@ -1,6 +1,5 @@
 # Fabrica de Automóveis 2025
 
----
 
 ````markdown
 #  Fábrica de Automóveis  
@@ -88,6 +87,3 @@ Este projeto foi desenvolvido como parte de uma atividade prática para aplicar 
 
 Desenvolvido por **Milena Felisbelo**
  [GitHub](https://github.com/Milenafelisbelo)
- [Instagram](https://www.instagram.com/_milena_felisbelo/)
-
-```
