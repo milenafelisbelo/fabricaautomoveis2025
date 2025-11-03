@@ -1,7 +1,5 @@
 # Fabrica de Automóveis 2025
 
-#  Fábrica de Automóveis  
-
 **Sistema de gerenciamento de vendas de automóveis para concessionárias.**  
 Gerencie o pátio de veículos, visualize áreas de estacionamento e controle as vendas de forma prática e eficiente.
 
