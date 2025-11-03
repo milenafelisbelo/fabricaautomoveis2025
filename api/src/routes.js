@@ -14,7 +14,6 @@ router.get('/vendas', Venda.read);
 router.post('/vendas', Venda.post);
 router.get('/alocacoes', Alocacao.read);
 
-// Example routes
 router.get('/', (req, res) => {
     res.json({ titulo: 'Fabrica de automoveis 2025' });
 });

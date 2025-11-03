@@ -1,5 +1,10 @@
-/* style.css - visual limpo, responsivo e conforme paleta fornecida */
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+
 :root{
   --white: #FFFFFF;
   --gray: #707070;
@@ -22,7 +27,6 @@ body{
   min-height:100vh;
 }
 
-/* Header */
 header{
   width:100%;
   max-width:1100px;
@@ -39,7 +43,6 @@ header h1{
   color:var(--gray);
 }
 
-/* Patio (grid) */
 main#patio{
   width:100%;
   max-width:1100px;
@@ -52,7 +55,6 @@ main#patio{
   box-shadow: 0 6px 18px rgba(25,25,40,0.06);
 }
 
-/* Cada área */
 .area{
   border-radius:8px;
   height:120px;
@@ -74,12 +76,10 @@ main#patio{
   color:var(--dark);
 }
 
-/* estado alocado (azul) e vendido (com marcador) */
 .area.alocado{ background: var(--blue); color: white; border-style: solid; border-color: rgba(0,0,0,0.06) }
 .area.vendido{ box-shadow: inset 0 -40px 40px rgba(0,0,0,0.06); }
 .area.vazio{ background: var(--white); color:var(--gray) }
 
-/* badge vendido no canto */
 .area.vendido::after{
   content: "Vendido";
   position:absolute;
@@ -126,7 +126,6 @@ main#patio{
   color:var(--gray);
 }
 
-/* carro item */
 .carro-item{
   display:flex;
   align-items:center;
@@ -147,7 +146,6 @@ main#patio{
   margin-left:12px;
 }
 
-/* botão vender */
 .vender-btn{
   background:var(--purple);
   color:white;
@@ -159,7 +157,6 @@ main#patio{
 }
 .vender-btn:hover{ filter:brightness(.95) }
 
-/* form select */
 .form-row{ margin:12px 0 }
 .form-select{
   width:100%;
@@ -169,7 +166,6 @@ main#patio{
   font-size:14px;
 }
 
-/* confirmar */
 #confirmar-venda{
   width:100%;
   padding:12px;
@@ -186,7 +182,6 @@ main#patio{
   cursor:not-allowed;
 }
 
-/* toast */
 .toast{
   position:fixed;
   left:50%;
@@ -202,7 +197,6 @@ main#patio{
 }
 .toast.show{ opacity:1 }
 
-/* responsivo */
 @media (max-width:900px){
   main#patio{ grid-template-columns: repeat(2, 1fr) }
 }
