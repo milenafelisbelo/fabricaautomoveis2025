@@ -1,7 +1,5 @@
 # Fabrica de Automóveis 2025
 
-
-````markdown
 #  Fábrica de Automóveis  
 
 **Sistema de gerenciamento de vendas de automóveis para concessionárias.**  
@@ -61,7 +59,7 @@ npx http-server
 ```
 
 Depois acesse no navegador:
- [http://localhost:8000](http://localhost:8000)
+ [http://localhost:3000](http://localhost:3000)
 
 ---
 
