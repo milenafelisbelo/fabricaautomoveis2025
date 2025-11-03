@@ -1,0 +1,212 @@
+/* style.css - visual limpo, responsivo e conforme paleta fornecida */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white: #FFFFFF;
+  --gray: #707070;
+  --purple: #7814FF;
+  --blue: #0000FF;
+  --bg: #fbfbff;
+  --muted: #f5f5f7;
+  --dark: #000000;
+  --card: #ffffff;
+}
+
+body{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  padding: 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* Header */
+header{
+  width:100%;
+  max-width:1100px;
+  margin-bottom:18px;
+  text-align:center;
+}
+header h1{
+  font-size:24px;
+  color:var(--dark);
+  margin-bottom:6px;
+}
+.subtitle{
+  font-size:13px;
+  color:var(--gray);
+}
+
+/* Patio (grid) */
+main#patio{
+  width:100%;
+  max-width:1100px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+  padding:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(249,249,255,0.9));
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(25,25,40,0.06);
+}
+
+/* Cada área */
+.area{
+  border-radius:8px;
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px dashed rgba(0,0,0,0.06);
+  background:var(--white);
+  cursor:pointer;
+  transition: transform .16s ease, box-shadow .16s ease;
+  position:relative;
+  overflow:hidden;
+}
+.area:hover{ transform: translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,0.06) }
+
+.area .area-num{
+  font-weight:700;
+  font-size:20px;
+  color:var(--dark);
+}
+
+/* estado alocado (azul) e vendido (com marcador) */
+.area.alocado{ background: var(--blue); color: white; border-style: solid; border-color: rgba(0,0,0,0.06) }
+.area.vendido{ box-shadow: inset 0 -40px 40px rgba(0,0,0,0.06); }
+.area.vazio{ background: var(--white); color:var(--gray) }
+
+/* badge vendido no canto */
+.area.vendido::after{
+  content: "Vendido";
+  position:absolute;
+  right:8px;
+  top:8px;
+  font-size:11px;
+  background: #FFEB3B;
+  color:#000;
+  padding:4px 8px;
+  border-radius:6px;
+  font-weight:700;
+}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+  z-index:1200;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.modal .modal-content{
+  background:var(--card);
+  width:100%;
+  max-width:720px;
+  border-radius:10px;
+  padding:18px;
+  position:relative;
+  box-shadow: 0 20px 40px rgba(10,10,40,0.12);
+}
+.modal .modal-content.small{ max-width:420px }
+
+.modal .close{
+  position:absolute;
+  right:12px;
+  top:12px;
+  background:transparent;
+  border:none;
+  font-size:26px;
+  cursor:pointer;
+  color:var(--gray);
+}
+
+/* carro item */
+.carro-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #f0f0f6;
+  margin-bottom:12px;
+  background:var(--muted);
+}
+.carro-info p{ margin:4px 0 }
+.carro-info .preco{ color:var(--gray) }
+
+.detalhes-venda{
+  font-size:13px;
+  color:var(--gray);
+  margin-left:12px;
+}
+
+/* botão vender */
+.vender-btn{
+  background:var(--purple);
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+}
+.vender-btn:hover{ filter:brightness(.95) }
+
+/* form select */
+.form-row{ margin:12px 0 }
+.form-select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #e6e6ee;
+  font-size:14px;
+}
+
+/* confirmar */
+#confirmar-venda{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  background:var(--purple);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
+}
+#confirmar-venda:disabled{
+  opacity:0.55;
+  cursor:not-allowed;
+}
+
+/* toast */
+.toast{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:28px;
+  background:rgba(0,0,0,0.8);
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  opacity:0;
+  transition:opacity .2s;
+  z-index:9999;
+}
+.toast.show{ opacity:1 }
+
+/* responsivo */
+@media (max-width:900px){
+  main#patio{ grid-template-columns: repeat(2, 1fr) }
+}
+@media (max-width:520px){
+  main#patio{ grid-template-columns: 1fr }
+  .area{ height:100px }
+}

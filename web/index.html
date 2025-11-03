@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábrica de automóveis</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fábrica de Automóveis</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+  <header>
+    <h1>Fábrica de Automóveis</h1>
+    <p class="subtitle">Clique em uma área ocupada (azul) para ver os automóveis. Áreas vazias aparecem em branco.</p>
+  </header>
+
+  <main id="patio" aria-label="Planta do pátio"></main>
+
+  <!-- Modal 1 - Área (lista de automóveis / status) -->
+  <div id="modal1" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="close" aria-label="Fechar modal">&times;</button>
+      <h2 id="modal1-titulo">Área ...</h2>
+      <div id="modal1-conteudo" class="modal-body">
+        <!-- preenchido via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 - Confirmação de Venda -->
+  <div id="modal2" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-content small" role="document">
+      <button class="close" aria-label="Fechar modal">&times;</button>
+      <h2 id="modal2-titulo">...</h2>
+
+      <div class="form-row">
+        <label for="select-cliente"><strong>Cliente</strong></label>
+        <select id="select-cliente" class="form-select">
+          <option value="">Selecione um cliente</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="select-concessionaria"><strong>Concessionária</strong></label>
+        <select id="select-concessionaria" class="form-select">
+          <option value="">Selecione uma concessionária</option>
+        </select>
+      </div>
+
+      <button id="confirmar-venda" disabled>Confirmar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
