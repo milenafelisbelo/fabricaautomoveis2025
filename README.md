@@ -44,17 +44,8 @@ node server.js
 
 ####  Executar o Frontend
 
-**Método 1:**
+**Método:**
 Abra o arquivo `index.html` diretamente no navegador
-
-**Método 2 (recomendado):**
-Use um servidor local:
-
-```bash
-python -m http.server 8000
-# ou
-npx http-server
-```
 
 Depois acesse no navegador:
  [http://localhost:3000](http://localhost:3000)
