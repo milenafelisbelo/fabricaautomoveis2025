@@ -13,8 +13,8 @@ O sistema foi desenvolvido com foco em **organização, performance e usabilidad
 ##  Tecnologias Utilizadas  
 
 ###  Frontend  
-- **HTML5**  
-- **CSS3**  
+- **HTML**  
+- **CSS**  
 - **JavaScript (ES6+)**  
 - **Fetch API**
 
@@ -29,7 +29,7 @@ O sistema foi desenvolvido com foco em **organização, performance e usabilidad
 
 ###  Pré-requisitos  
 - Servidor da **API local** rodando na porta `3000`  
-- Um **navegador web moderno** (Chrome, Edge, Firefox, etc.)
+- Um **navegador web moderno** (Chrome)
 
 ---
 
